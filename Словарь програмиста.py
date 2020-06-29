@@ -10,9 +10,6 @@
 Если это понятие есть в словаре, необходимо вывести его определение,
 в обратном случае – "Не найдено".
 """
-
-
-
 def dot_input():
     while True:
         s = input()
@@ -21,7 +18,13 @@ def dot_input():
         else:
             s = s.split(" – ")
             return s
-print(dot_input())
-
-
-
+vok = {}
+while True:
+    s = input()
+    if s == ".":
+        break
+    else:
+        s = s.split(" – ")
+        # vok=dict([s])
+        vok.update([s])
+print(vok)
