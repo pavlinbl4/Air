@@ -11,6 +11,17 @@
 в обратном случае – "Не найдено".
 """
 
-text = input()
-print(text)
-print(1111)
+
+
+def dot_input():
+    while True:
+        s = input()
+        if s == ".":
+            break
+        else:
+            s = s.split(" – ")
+            return s
+print(dot_input())
+
+
+
