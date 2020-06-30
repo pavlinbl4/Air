@@ -30,4 +30,6 @@ def make_work():
             vok.update([s])
     return vok
 
-print(make_work())
+m = int(input())
+vvod = [input() for x in range(m)]
+
