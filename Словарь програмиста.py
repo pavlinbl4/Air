@@ -18,18 +18,41 @@ def dot_input():
         else:
             s = s.split(" – ")
             return s
+
+def rezult():
+    m = int(input())
+    vvod = [input() for x in range(m)]
+
+    for x in range(m):
+        if vvod[x] in vok:
+            print(vok[vvod[x]])
+        else:
+            print("Не найдено")
+
 def make_work():
     vok = {}
     while True:
         s = input()
         if s == ".":
-            break
+            rezult()
         else:
             s = s.split(" – ")
             # vok=dict([s])
             vok.update([s])
     return vok
 
-m = int(input())
-vvod = [input() for x in range(m)]
 
+vok = {}
+while True:
+    s = input()
+    if s == ".":
+        m = int(input())
+        vvod = [input() for x in range(m)]
+        for x in range(m):
+            if vvod[x] in vok:
+                print(vok[vvod[x]])
+            else:
+                print("Не найдено")
+    else:
+        s = s.split(" – ")
+        vok.update([s])
