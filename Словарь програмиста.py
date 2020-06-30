@@ -18,13 +18,16 @@ def dot_input():
         else:
             s = s.split(" – ")
             return s
-vok = {}
-while True:
-    s = input()
-    if s == ".":
-        break
-    else:
-        s = s.split(" – ")
-        # vok=dict([s])
-        vok.update([s])
-print(vok)
+def make_work():
+    vok = {}
+    while True:
+        s = input()
+        if s == ".":
+            break
+        else:
+            s = s.split(" – ")
+            # vok=dict([s])
+            vok.update([s])
+    return vok
+
+print(make_work())
