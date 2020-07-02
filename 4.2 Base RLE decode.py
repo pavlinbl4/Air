@@ -17,8 +17,8 @@ aaabccccCCaB
 Формат вывода:
 Строка, содержащая раскодированную последовательность."""
 
-#text = input()
-text = "3ab4c2CaB"
+text = input()
+# text = "3ab4c2CaB"
 dd = []
 x = 0
 while x <= len(text)-1:
@@ -28,5 +28,4 @@ while x <= len(text)-1:
     else:
         dd.append(text[x])
         x = x + 1
-#print(*dd)
 print(*dd,sep="")
