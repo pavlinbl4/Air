@@ -28,4 +28,5 @@ while x <= len(text)-1:
     else:
         dd.append(text[x])
         x = x + 1
-print(*dd)
+#print(*dd)
+print(*dd,sep="")
