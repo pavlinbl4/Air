@@ -18,14 +18,20 @@ aaabccccCCaB
 Строка, содержащая раскодированную последовательность."""
 
 text = input()
-# text = "3ab4c2CaB"
+# text = "13ab4c2CaB"
 dd = []
 x = 0
-while x <= len(text)-1:
-    if (text[x]).isdecimal() == True:
-        dd.append(int(text[x])*text[x+1])
-        x=x+2
+while x <= len(text) - 1:
+    if (text[x]).isdecimal() == True and (text[x + 1]).isdecimal() == False:
+        dd.append(int(text[x]) * text[x + 1])
+        x = x + 2
+
+    elif (text[x]).isdecimal() == True and (text[x + 1]).isdecimal() == True:
+        dd.append((int(text[x])*10 + int(text[x + 1])) * text[x + 2])
+        # print((int(text[x])*10 + int(text[x + 1])))
+        x = x + 3
     else:
         dd.append(text[x])
         x = x + 1
-print(*dd,sep="")
+print(*dd, sep="")
+# print("aaaaaaaaaaaaabccccCCaB".count("a"))
