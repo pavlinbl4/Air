@@ -10,8 +10,15 @@ text = text.replace(".","")
 text = text.replace("?","")
 text = text.replace("!","")
 text = text.split(" ")
-n = len(text)
-print(text, n, type(text))
+# n = len(text)
+# print(text, n, type(text))
 # for x in text():
-words = {x:text[x] for x in range(len(text))}
-print(words)
+# words = {x:text[x] for x in range(len(text))}
+# print(words)
+# print(words.values())
+# print(words.items())
+# print(iter(words.keys()))
+dct = {}
+for x in text:
+    dct[x] = dct.get(x,0) +1
+print(dct)
