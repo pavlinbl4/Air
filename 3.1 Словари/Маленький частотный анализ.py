@@ -5,4 +5,13 @@
 # text = input()
 text = "Корабли лавировали, лавировали, да не вылавировали"
 text = text.lower()
-print(text)
+text = text.replace(",","")
+text = text.replace(".","")
+text = text.replace("?","")
+text = text.replace("!","")
+text = text.split(" ")
+n = len(text)
+print(text, n, type(text))
+# for x in text():
+words = {x:text[x] for x in range(len(text))}
+print(words)
