@@ -21,4 +21,4 @@ text = text.split(" ")
 dct = {}
 for x in text:
     dct[x] = dct.get(x,0) +1
-print(dct)
+m = max(dct.values())
