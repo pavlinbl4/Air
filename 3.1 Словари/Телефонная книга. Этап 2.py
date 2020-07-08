@@ -11,12 +11,15 @@ while True:
     if s == ".":
         break
     else:
-        text = s.split()
+        text = s.replace(",","").split()
         if len(text) >= 2 and phonebook.get(text[0]) == None:
             phonebook[text[0]] = [text[x] for x in range(1,len(text))]
         elif len(text) >= 2 and phonebook.get(text[0]) != None:
-            phonebook[text[0]].append([text[x] for x in range(1,len(text))])
+            add = (", ".join(map(str,[text[x] for x in range(1, len(text))])))
+            phonebook[text[0]].append( add )
         else:
-            # print(phonebook[text[0]])
-            print(*phonebook[text[0]])
+            if phonebook.get(text[0]) == None:
+                print("Не найдено")
+            else:
+                print(*phonebook[text[0]],sep=', ')
 
