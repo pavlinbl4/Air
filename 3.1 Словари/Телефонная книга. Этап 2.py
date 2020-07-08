@@ -17,5 +17,6 @@ while True:
         elif len(text) >= 2 and phonebook.get(text[0]) != None:
             phonebook[text[0]].append([text[x] for x in range(1,len(text))])
         else:
-            print(phonebook[text[0]])
+            # print(phonebook[text[0]])
+            print(*phonebook[text[0]])
 
