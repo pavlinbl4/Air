@@ -1,3 +1,16 @@
 vk = {'driver.drv': 'system', 'bussiness_data.txt': 'confidential', 'gtaV_graphics.txt': 'settings', 'отчет.txt': 'ordinary', 'fight_club.torrent': 'ordinary'}
 
-print(vk['driver.drv']) # вывод значения по ключу
+print(vk['driver.drv'])  # вывод значения по ключу
+
+
+"""пробую создать словарь6где в качестве  значения используется список"""
+phonebook = {
+    "tom":[555555,6666666,7777777],
+    "jerry": [444444,333333,34343434]
+}
+
+phonebook["scrudj"] = 837598345238
+print(phonebook)
+print(phonebook["tom"])
+print(*phonebook["tom"])
+
