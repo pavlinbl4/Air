@@ -12,8 +12,10 @@ while True:
         break
     else:
         text = s.split()
-        if len(text) >= 2:
+        if len(text) >= 2 and phonebook.get(text[0]) == None:
             phonebook[text[0]] = [text[x] for x in range(1,len(text))]
+        elif len(text) >= 2 and phonebook.get(text[0]) != None:
+            phonebook[text[0]].append([text[x] for x in range(1,len(text))])
         else:
             print(phonebook[text[0]])
 

@@ -9,7 +9,10 @@ phonebook = {
     "jerry": [444444,333333,34343434]
 }
 
-phonebook["scrudj"] = 837598345238
+phonebook["scrudj"] = 837598345238 # добавление ключ - значение в словарь
+phonebook["tom"].append(10101) # добавляю данные в список значения в словаре
+print(phonebook.get("bob"))
+
 print(phonebook)
 print(phonebook["tom"])
 print(*phonebook["tom"])
