@@ -1,5 +1,5 @@
-# d = "3ab4c2CaB"
-d = input()
+d = "13ab44c2CaB"
+# d = input()
 l = [x for x in d]
 rez = []
 for x in range(len(l)):
