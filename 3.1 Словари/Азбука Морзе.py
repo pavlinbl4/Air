@@ -13,14 +13,39 @@ morze.update(rev)  # объединяю словари в один
 """ сначала создам код 
 для вводимой морзянки
 """
-www = input()
-if www.replace(" ", "") == True:
+# www = input()
+# www = "— •••• •	——•— ••— •• —•—• —•—	—••• •—• ——— •—— —•	••—• ——— —••—	•——— ••— —— •——• •••	——— •••— • •—•	— •••• •	•—•• •— ——•• —•——	—•• ——— ——•"
+www = "The quick brown fox jumps over the lazy dog"
+ppp = [] # список для формирования предложения из переведенных слов
+if www.replace(" ", "").isalpha() == True:
+    word = [x for x in www.lower().split(" ")]
+    print(word, "количество слов = ",len(word))
+    for y in range(len(word)):# перебираю слова с списке
+        # print(word[y],"количество значений=", len(word[y]))
+        lett = word[y].split()
+        print("буквы в слове - ",lett,type(lett),lett[0],len(lett))
+        for z in range(len(lett)):
+            print(lett[z])
+        # ppp.append("".join([morze[x] for x in lett]))
+
+
     print("буквы")
+
     # работаем с обычным текстом
 
 else:  # расшифровываю морзянку
+
     word = [x for x in www.split("\t")]
-    print(word, "количество слов = ",len(word))
+    # print(word, "количество слов = ",len(word))
+    for y in range(len(word)):# перебираю слова с списке
+        # print(word[y],"количество значений=", len(word[y]))
+        lett = word[y].split()
+        # print("буквы в слове - ",lett)
+        # print("".join([morze[x] for x in lett]))
+        ppp.append("".join([morze[x] for x in lett]))
+print(*ppp)
+
+
 
 
 # letters = [ x for x in input()]
