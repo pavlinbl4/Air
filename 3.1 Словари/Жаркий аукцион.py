@@ -3,12 +3,12 @@
 # преобразуем строку в список и обращаемся к словарю с товарами, если цена больше значение в словаре, то меняем ее на новую ставку
 
 # вводятся изначальные данные
-# items = input().split(", ") # список предметов
-items = ['Apple II', 'компьютерная мышь Lisa', 'Sony PS1', 'YIS-805', 'IBM 5150', 'Macintosh LC520', 'Эльбрус 801-PC']
-# price = int(input())
-price = 1500
-# bueyrs = input().split(", ") # список покупателей
-buyers = ['Michael', 'Jake', 'John', 'Alex', 'Jane', 'Steve']
+items = input().split(", ") # список предметов
+# items = ['Apple II', 'компьютерная мышь Lisa', 'Sony PS1', 'YIS-805', 'IBM 5150', 'Macintosh LC520', 'Эльбрус 801-PC']
+price = int(input())
+# price = 1500
+buyers = input().split(", ") # список покупателей
+# buyers = ['Michael', 'Jake', 'John', 'Alex', 'Jane', 'Steve']
 
 st = { a : price for a in items} # создаю словарь предмет - стартовая цена
 vic = {} # покупатели с наибольшими ставками
@@ -18,23 +18,33 @@ while True:
     bid = input() # вводится имя покупатея, наименование товара, предлагаемая цена
 
     if bid == "Аукцион закончен!": # если на ввод подается фраза "Аукцион закончен!", то прекращаем работу програмы и выводим ччерез пробел  - предмет, имя покупателя и ставку
-        print("результат аукциона")
+        # print("результат аукциона")
+        # print(st)
+        # print(vic)
+        for x in st:
+            if st[x] != 1500:
+                print(x, vic[x], st[x])
+            else:
+                print(x, "Предложений не было")
+        # проверяем на какие позиции были сделанны ставки
+
+        break
     else:
         bid = bid.split()
-        print(bid)
-        while False:
-            if bid[0] in buyers:  # проверяем наличие имени в ставке в списке покупателей, если имя есть, то проверяем величину ставки
-                print("вы не участник аукциона")
-                continue
-            else:
-                print("Good")
+        # print(bid)
+        while True:
+            if bid[0] not in buyers:  # проверяем наличие имени в ставке в списке покупателей, если имя есть, то проверяем величину ставки
+                # print("вы не участник аукциона")
                 break
-                # if bid[-1] > st.get(" ".join(bid[1:-1])):
-                #     st.update(" ".join(bid[1:-1]), bid[-1])
-                #     vic.update(bid[0], " ".join(bid[1:-1]))
-                    # вносим покупателя сделавшего большую ставку в словарь покупатель - предмет
-                # print(st)
-                # print(vic)
+            else:
+                # print("вы можете участвовать")
+                # break
+                if int(bid[-1]) > st.get(" ".join(bid[1:-1])):
+                    st[" ".join(bid[1:-1])] = int(bid[-1])
+                    # vic[bid[0]] = ( " ".join(bid[1:-1]))
+                    vic[" ".join(bid[1:-1])] = bid[0] # слловарь участников сделавших большие ставки
+                break
+
 
 
 
