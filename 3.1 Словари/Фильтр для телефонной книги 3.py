@@ -64,7 +64,8 @@ while True:
                     standart()
             clear(phones)#  функция удаляющая нули из списка phones
             if name in phonebook:
-                phonebook[name].append(phones)
+                add = (", ".join(map(str,[phones[x] for x in range(len(phones))])))
+                phonebook[name].append(add)
             else:
                 phonebook[name] = phones
 
