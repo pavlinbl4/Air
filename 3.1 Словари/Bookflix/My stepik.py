@@ -25,15 +25,12 @@ def book_shell(act,dict):
 
 def test_genre():
     jan = ([lybr[x] for x in dict[user_name(act)]])  # узнаю жанры прочитанных книг
-    # print("жанры прочитанных книг -",jan)
     global sort_jan
     sort_jan = {}  # словарь где будет любимые жанры
 
     for x in range(len(jan)):
         ss = jan.count(jan[x])
         sort_jan[jan[x]] = ss
-
-    # print("словарь любимых жанров -", sort_jan) # тут все данные выводятся
     return sort_jan
 
 
@@ -42,14 +39,15 @@ def test_name():
         print("Список пуст - пользователь не прочел ни одной книги")
     else:
         test_genre()
-        # print("словарь любимых жанров -", sort_jan)  # тут все данные выводятся
-        return sort_jan
+        print(sort_jan)
 
+        return sort_jan
 
 
 def _genre():
     global oth
     oth = []  # все книги этого жанра
+    
 
     if sort_jan[max(sort_jan, key=sort_jan.get)] == 1:  # счетчик у любимого жанра равен 1
         for x in sort_jan:
@@ -96,8 +94,7 @@ while True:
         if "Посоветуй" in act:  # если в запросе есть слово "Посоветуй", то определяем имя пользователя
             user_name(act) # пользователь, просщий совета
             test_name()  # проверяю читал ли пользователь книги, если да то получаю словарь люимых жанров  sort_jan
-            # print("словарь любимых жанров -", test_name())
-            _genre() # функция определяющая всех книг даного жанра name 'sort_jan' is not defined не могу разобраться почему
+            _genre()
             # print("словарь любимых жанров -", sort_jan)
             # recomendation() #рекомендованные к прочтению книги
 
