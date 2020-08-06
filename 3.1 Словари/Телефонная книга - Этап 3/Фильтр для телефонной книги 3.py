@@ -63,7 +63,7 @@ while True:
                     standart()
             clear(phones)#  функция удаляющая нули из списка phones
             if name in phonebook:
-                phonebook[name].append(phones)
+                phonebook[name].append("".join(phones))
             else:
                 phonebook[name] = phones
 
