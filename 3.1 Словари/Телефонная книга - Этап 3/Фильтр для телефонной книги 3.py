@@ -56,6 +56,7 @@ while True:
             phones = numb.split(",") # создаю список телефонов
             for x in range(len(phones)): # удаляю пробелы и тд в номерах
                 optimize()
+                # if (phones[x][0] == "+" and phones[x][1] != "7") or (len(phones[x]) == 12 and phones[x][0] != "+") or (len(phones[x]) == 11 and phones[x][0] != "8" or len(phones[x]) < 11 or len(phones[x]) > 12):
                 if (phones[x][0] == "+" and phones[x][1] != "7")  or (
                         len(phones[x]) == 11 and phones[x][0] != "8" or len(phones[x]) < 11 or len(phones[x]) > 12):
                     phones[x] = 0 # заменяю на ноль некорректный номер
@@ -63,7 +64,7 @@ while True:
                     standart()
             clear(phones)#  функция удаляющая нули из списка phones
             if name in phonebook:
-                phonebook[name].append("".join(phones))
+                phonebook[name].append(phones)
             else:
                 phonebook[name] = phones
 
