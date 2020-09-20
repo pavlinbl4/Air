@@ -1,10 +1,10 @@
 import imaplib
-import credentials
+# import credentials
 
 imap_ssl_host = 'imap.gmail.com'
 imap_ssl_port = 993
-username = credentials.email
-password = credentials.passwd
+username = "calvoegrasso@gmail.com"
+password = "15deadman"
 server = imaplib.IMAP4_SSL(imap_ssl_host, imap_ssl_port)
 
 server.login(username, password)
