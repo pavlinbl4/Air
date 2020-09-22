@@ -1,3 +1,7 @@
 n = open("text.txt")
 for line in n:
-    print(n.read())
+    x = (n.read())
+
+    print(type(x))
+print(x)
+print(len(x))
