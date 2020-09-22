@@ -15,13 +15,26 @@
 """
 
 # x = int(input())
-x = 4567
-s = 0
-if x//10 != 0:
-    s = s + x%10
-    x = x//10
-    print(x)
-else:
-    print(s)
+# x = "999"
+# def number(x,c=0):
+#     if len(x) == 1:
+#         print(x,c)
+#     else:
+#         s = 0
+#         for i in x:
+#             s+=int(i)
+#         # print(s)
+#         number(str(s),c+1)
+# number(x)
 
+def recur(chislo, count=0):
+    if len(chislo)==1:
+        print(chislo, count)
+    else:
+        s = 0
+        for i in chislo:
+            s += int(i)
+        recur(str(s), count + 1)
+s = input()
+recur(s)
 
