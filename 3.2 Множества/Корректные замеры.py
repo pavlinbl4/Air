@@ -1,0 +1,16 @@
+# n1 = input()
+# n2 = input()
+# n1 = "141 854 32 0.9 43 85.6 90.2 42.5 180 97.9".split()
+# n2 = "141 32 0.9 42.5 88 43 37 97.9 180 854".split()
+# print(len(n1))
+# print(len(n2))
+n1 = set(input().split())
+n2 = set(input().split())
+# print(n1)
+# print(n2)
+# print(len(n1.intersection(n2)))
+# print(len(n1)/100*70)
+if len(n1.intersection(n2)) > int(len(n1)/100*70):
+    print("Корректно")
+else:
+    print("Некорректно")

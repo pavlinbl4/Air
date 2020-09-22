@@ -48,6 +48,7 @@ while True:
                     print("Не найдено")
                 else:
                     print(*phonebook[name],sep=', ')
+                    # print("@"*12)
             else:
                 print("Не найдено")
         else:# добавляем информацию в телефонную книгу
@@ -56,15 +57,19 @@ while True:
             phones = numb.split(",") # создаю список телефонов
             for x in range(len(phones)): # удаляю пробелы и тд в номерах
                 optimize()
+
                 # if (phones[x][0] == "+" and phones[x][1] != "7") or (len(phones[x]) == 12 and phones[x][0] != "+") or (len(phones[x]) == 11 and phones[x][0] != "8" or len(phones[x]) < 11 or len(phones[x]) > 12):
-                if (phones[x][0] == "+" and phones[x][1] != "7")  or (
-                        len(phones[x]) == 11 and phones[x][0] != "8" or len(phones[x]) < 11 or len(phones[x]) > 12):
+                if phones[x][0] == "+" and phones[x][1] != "7" or phones[x][0] == "+" and len(phones[x]) != 12 or (
+                        len(phones[x]) == 11 and phones[x][0] != "8" or len(phones[x]) < 11 or len(phones[x]) > 12 or phones[x][0] == "8" and
+                len(phones[x]) != 11):
+                    # print(phones[x])
                     phones[x] = 0 # заменяю на ноль некорректный номер
                 else:
+                    # print(phones[x])
                     standart()
             clear(phones)#  функция удаляющая нули из списка phones
             if name in phonebook:
-                phonebook[name].append(phones)
+                phonebook[name].append(", ".join(phones))
             else:
                 phonebook[name] = phones
 
