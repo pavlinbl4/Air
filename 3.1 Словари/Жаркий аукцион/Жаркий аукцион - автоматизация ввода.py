@@ -9,7 +9,7 @@ vvod = """John YIS-805 400
 Jane Macintosh LC520 5000
 Jake Macintosh LC520 4000
 Michael IBM 5150 10000
-Alex Apple II 1501
+Alex Apple II 1501000
 BobDilan Apple II 77777
 BobDilan Apple II 77777
 Steve Apple II 15000
@@ -28,47 +28,23 @@ for x in range(len(xx)):
     else:
         bid = xx[x]
         if bid == "Аукцион закончен!":
-            print("REZULT")
+            for i in items:
+                if i not in lot:
+                    print(i, "Предложений не было")
+                else:
+                    print(max(lot[i]))
+                    print(i,lot[i][max(lot[i])],max(lot[i]) )
             break
         else:
-            # print("Имя участника - ", bid.split()[0])
-            # print("Размер ставки - ", bid.split()[-1])
-            # print("Название предмета - ", " ".join(bid.split()[1:-1]))
             if bid.split()[0] in buyers and int(bid.split()[-1]) > price:
-                print("участник - ", bid.split()[0], ", предмет - "," ".join(bid.split()[1:-1]),", ставка - ", bid.split()[-1])
-                # u = bid.split()[0]
-                # print(u)
-                # it = " ".join(bid.split()[1:-1])
-                # print(it)
-                # money = bid.split()[-1]
-                # print(money)
-                # print((lot.fromkeys(u,money)))
-                userbid[bid.split()[-1]] = bid.split()[0]
-                print(userbid)
+                u = bid.split()[0]
+                money = bid.split()[-1]
                 lot.setdefault(" ".join(bid.split()[1:-1]),{})
-                lot[" ".join(bid.split()[1:-1])].update(userbid)
-                # lot[" ".join(bid.split()[1:-1])].append(bid.split()[-1])
-                # lot[" ".join(bid.split()[1:-1])] = [bid.split()[0],bid.split()[-1]]
-    print(lot)
+                lot[" ".join(bid.split()[1:-1])].update({int(money):u})
+    print(lot)# словарь где ключ предмет, а значение словарь со ставками
 
 
 
 
 
 
-            # else:
-            #     print("либо ставка маленькая, либо участник не зарегестрирован")
-
-
-
-
-
-
-
-
-
-
-# items = xx[0].split(", ")  # список предметов
-# price = int(xx[1])  # начальная стоимость всех предметов
-# buyers = xx[2].split(", ") # список покупателей
-# print('\n',items,'\n',price,'\n',buyers)

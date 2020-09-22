@@ -13,7 +13,8 @@
 
 a = []
 ss = []
-n = int(input())
+# n = int(input())
+n = 5
 for i in range(n):
 
     a.append(list(map(int, input().split())))
