@@ -1,16 +1,10 @@
-txt = "sssssssss dddd wwwww ooooooooooo"
-txt = txt.split(" ")
-# txt = input().split(" ")
+
+txt = input().split(" ")
 voc = {}
 vv = []
-
 for i in txt:
     vv.append(len(i))
 vv = sorted(vv)
-print(vv)
-s = " ".join(map(str,vv))
-for i in s:
-    voc[i] = s.count(i)
+voc = dict((x,vv.count(x)) for x in vv)
 for i in voc:
-    if i != " ":
-        print(i,voc[i],sep=": ")
+    print(i,voc[i],sep=": ")
