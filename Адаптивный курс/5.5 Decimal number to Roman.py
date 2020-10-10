@@ -1,6 +1,6 @@
 # roman_to_dec = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 # numb = input()  # Формат ввода: Строка, содержащая натуральное число
-numb = 1984
+numb = 3894  # MMMDCCCXCIV
 
 # преобразуем готовый словарь наоборот
 # dec_to_roman = {}
@@ -14,5 +14,14 @@ vv = []
 for i in range(len(str(numb))):
     vv.append(int((numb%10 * (10**(i+1)))/10))
     numb = numb//10
+print(vv)
 for i in range(len(vv)-1,-1,-1):
-    print(vv[i])
+    # print(int(vv[i]/10**i))
+    fd = int(vv[i]/10**i)
+    rd = 10**i
+
+    # print( dec_to_roman[rd])
+    # print(rd)
+    print(fd)
+
+

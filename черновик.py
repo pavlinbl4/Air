@@ -1,18 +1,13 @@
-# print(7%2)
+n = int(input())
+m = n
+a = []
+for i in range(n):
+    # a.append(list(map(int,input().split()))) создаем массив из чисел
+    a.append(input().split())
 
-a,b,c = int(input()), int(input()), int(input())
-m1 = min(a,b,c)
-m3 = max(a,b,c)
-m2 = (a + b + c) - m1 - m3
-print(m1,m2,m3,sep="\n")
+for i in range(1,n):
+    print()
+    for j in range(1,m):
+        print(a[i][j],end =" ")
 
 
-
-
-# s,a,b = float(input()), float(input()),float(input())
-# print(s/(a+b))
-
-# l = str(int(input()), int(input()), int(input()), int(input()), int(input()))
-# # print("Наименьшее число = ", min(l))
-# # print("Наибольшее число = ", max(l))
-# print(l)
