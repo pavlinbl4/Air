@@ -1,7 +1,7 @@
 l = int(input()) # максимальный размер щита
 n = int(input()) # количество досок в заборе
 a = [] #['1', '1', '1', '1', '1', '1', '1', '1'] #
-# print(type(a[0]))
+
 for x in range(n):
     a.append(input())
 count = 0
