@@ -1,13 +1,17 @@
-n = int(input())
-m = n
-a = []
-for i in range(n):
-    # a.append(list(map(int,input().split()))) создаем массив из чисел
-    a.append(input().split())
+# n = int(input())
+n =3
+if n == 1:
+    print("one")
+if n == 2:
+    print("two")
+if n == 3:
+    print("tree")
+if n ==4:
+    print("four")
+else:
+    print("end")
 
-for i in range(1,n):
-    print()
-    for j in range(1,m):
-        print(a[i][j],end =" ")
+
+
 
 
