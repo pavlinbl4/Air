@@ -1,0 +1,5 @@
+a1 = set(input().split(", "))
+a2 = set(input().split(", "))
+# print(a1)
+# print(a2)
+print(*a1.union(a2),sep=", ")

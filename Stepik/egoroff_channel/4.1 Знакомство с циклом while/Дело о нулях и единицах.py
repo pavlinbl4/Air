@@ -1,8 +1,9 @@
-# n = int(input())
-# st = input
-n = 5
-st = "111"
-index = 0
-while "1" in st and "0"  in st:
-    while i != n:
+n = int(input())
+st = input()
+zero = st.count("0")
+one = st.count("1")
+para = zero
+if one < zero:
+    para = one
+print(n - para*2)
 
