@@ -1,13 +1,15 @@
 txt = 'Day, mice. "Year" is a mistake!'
-print(txt.split())
-txt = txt.split()
-for i in range(len(txt)):
+# print(txt.split())
+txt = txt.split() # превращаю текст в список
+for i in range(len(txt)): # обработка каждого слова в списке
     shift = 0
-    for x in txt[i]:
-        print("txt[i] = ", txt[i])
-        if x.isalpha() == True:
-            shift += 1
+    print("txt[i] = ", txt[i])
     new = str()
+    for x in txt[i]:
+        if x.isalpha() == True:  # нахожу количество букв в слове
+            print(x)
+            shift += 1 # сдвиг равен количеству букв в слове
+
     for x in txt[i]:
         if x.isalpha() == True:
             if 97 <= ord(x) <= 122 - shift:
@@ -20,7 +22,8 @@ for i in range(len(txt)):
                 new = new + chr(shift - 25 + ord(x))
         else:
             new = new + x
-    print(new)
+    new = new +"*"
+print(new)
 
 
 
