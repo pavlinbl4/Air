@@ -1,0 +1,5 @@
+n = int(input())
+a1 = set(input().split(", "))
+a2 = set(input().split(", "))
+b = a1.union(a2)
+print(n - len(b))

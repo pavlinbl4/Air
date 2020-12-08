@@ -23,6 +23,14 @@ label_1 = tk.Label(win,text = "Hekko",
 label_1.pack()
 
 btn1 = tk.Button(win,command = say_hi,
-                 text = "button")
+                 text = "button",
+                 bg = 'black',
+                 fg = 'red',
+                 underline = True,
+                 font =("arial" ,40,"bold"),
+                borderwidth = 50,
+
+
+                 )
 btn1.pack()
 win.mainloop()
