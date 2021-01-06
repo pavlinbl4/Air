@@ -1,7 +1,7 @@
-n = int(input())
-lst = []
-for x in range(1,n+1):
-    if len(lst) < n:
-        lst = lst + [x]*x
-print(*lst[:n])
+def my_function(name):
+
+    def inner_function():
+        print("test",name)
+
+    return inner_function
 

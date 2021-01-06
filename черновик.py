@@ -1,19 +1,11 @@
-# text = 'Gabler Ruby - burrel bag!'
-text = text.lower()
-text = text.replace("-","")
-text = text.replace(" ","")
-text = text.replace("?","")
-text = text.replace("!","")
-text = text.replace(".","")
-text = text.replace(",","")
-# print(text)
-# text ="gablerrubyburrelbag"
-flag = True
-for i in range(len(text)//2):
-    if text[i] == text[-i-1]:
-        print(text[i],"-",text[-i-1])
-        flag = True
-    else:
-        flag = False
-        break
-return flag
+x = int(input()
+p = int(input()    # процент прироста
+y = int(input()       # достижение
+count = 1
+
+while x <= y:
+    print( "day", count, "-----", "distance",x)
+    count += 1
+    x = x + x/100*p
+
+print(count)
